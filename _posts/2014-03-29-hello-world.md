@@ -8,3 +8,8 @@ tags: []
 {% include JB/setup %}
 
 Hello World!
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
