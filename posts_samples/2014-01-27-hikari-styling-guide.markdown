@@ -22,7 +22,7 @@ In a free hour, when our power of choice is untrammelled and when nothing preven
 
 There's nothing like a good block of code! Especially when picked randomly out of Github ([styledocco.js](https://github.com/jacobrask/styledocco/blob/master/styledocco.js)).  
 
-{% highlight js %}
+```js
 var separate = function(css) {
   var lines = css.split('\n');
   var docs, code, line, blocks = [];
@@ -47,7 +47,7 @@ var separate = function(css) {
   }
   return blocks;
 };
-{% endhighlight %}
+```
 
 <img src="{{ site.baseurl }}/assets/img/img2.jpg">
 

@@ -26,7 +26,9 @@ github: http://github.com/amalrik
 
 markdown: kramdown
 permalink: pretty
-highlighter: pygments
+highlighter: rouge
+
+plugins: [jekyll-paginate]
 
 paginate: 10
 paginate_path: "/page/:num"
