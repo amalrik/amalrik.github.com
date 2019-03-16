@@ -18,7 +18,7 @@ The first line will install rails 6 beta and the second will create a rails appl
  - -d postgresql: informs rails to use postgres as database. 
 
 ### Install Rspec
-Change the Gemfile, adding the gems right after byebug, like this:
+Change the Gemfile, adding the gems on the group development and test, like this:
 {% highlight ruby %}
 #Gemfile
 group :development, :test do
@@ -47,11 +47,11 @@ To complete the installation, we have to inform rspec to use capybara so add thi
 require 'capybara/rspec'
 {% endhighlight %}
 
-Also lets configure rspec-rails to use chrome headless, to install chrome headless is another subject, check this: link to chrome install
+Also, I want configure rspec-rails to use chrome headless so we test javascript too.
 
 {% highlight bash %}
-mkdir spec/support
-touch spec/support/capybara.rb
+$ mkdir spec/support
+$ touch spec/support/capybara.rb
 {% endhighlight %}
 
 {% highlight ruby %}
@@ -113,7 +113,7 @@ $ bundle binstubs rspec-core
 
 
 ### Smoke Test
-Lets see if everything works as expected. At moment as I write this rspec-rails hasn't a generator for system specs on a release. So I will do it by hand.
+Lets see if everything works as expected. At moment as I write this rspec-rails hasn't a generator for system specs on the latest release. So I will do it by hand.
 
 {% highlight bash %}
 $ mkdir spec/system
@@ -124,15 +124,19 @@ $ touch spec/system/hello_system_spec.rb
 #/spec/system/hello_system_spec.rb
 require "rails_helper"
 
-RSpec.describe "hello", :type => :system do
-  visit "/hello"
-  expect(page).to have_text("Hello#index")
+RSpec.describe "Hello", type: :system do
+  it 'it says hello' do
+    visit "/hello/index"
+    expect(page).to have_text("Hello#index")
+  end
 end
 {% endhighlight %}
 
 {% highlight bash %}
 $ bin/rails g controller Hello index
 {% endhighlight %}
+
+To run the tests:
 
 {% highlight bash %}
 $ bundle exec rspec spec/system
@@ -240,3 +244,5 @@ additional links:
 [shoulda matchers](https://github.com/thoughtbot/shoulda-matchers)
 
 [factory bot cheatsheet](https://devhints.io/factory_bot)
+
+[Getting started with chrome headless](https://developers.google.com/web/updates/2017/04/headless-chrome)
