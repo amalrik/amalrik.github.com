@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using Page Object Pattern in Rspec"
+title:  "Using Page Object Pattern in rspec"
 date:   2019-03-01 11:06:51
 ---
 
@@ -45,7 +45,7 @@ The first thing is creating a spec/support folder.
 {% endhighlight %}
 
 The class is a simple PORO 
-{%highlight ruby%}
+{% highlight ruby %}
 class NewPostForm
 end
 {% endhighlight %}
