@@ -10,7 +10,7 @@ I'm going to install rails, rspec and factory bot. I will use only the latest an
 ### Install Rails
 {% highlight bash %}
 $ gem install rails --pre
-$ rails _6.0.0.beta2_ new test_app -T -d postgresql
+$ rails _6.0.0.beta3_ new test_app -T -d postgresql
 {% endhighlight %}
 
 The first line will install rails 6 beta and the second will create a rails application, the options are for:
